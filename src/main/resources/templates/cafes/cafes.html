@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Cafe</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<header class="header">
+    <div class="container header-container">
+        <a href="" class="header-logo link">Cafe<span class="logo-accent">Pizza</span></a>
+        <nav class="header-nav">
+            <ul class="header-list list">
+                <li class="header-item"><a href="/" class="header-link link current">Home</a></li>
+                <li class="header-item"><a th:href="@{/cafes}" class="header-link link">Cafe</a></li>
+                <li class="header-item"><a th:href="@{/pizzas}" class="header-link link">Pizza</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="login">
+        <div class="header-item"><a th:href="@{/login}" class="login">🔑</a></div>
+    </div>
+</header>
+
+<main>
+    <section class="cafes_hero">
+        <table style="border-spacing: 20px">
+            <thead>
+            <tr>
+                <th>№</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>E-mail</th>
+                <th>Phone</th>
+                <th>Open</th>
+                <th>Close</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cafes, iter : ${cafes}">
+                <td th:text="${iter.index}+1"></td>
+                <td> <a th:href="@{cafes/show(id=${cafes.id})}" th:text="${cafes.name}" method="GET" ></a></td>
+                <td th:text="${cafes.city}"></td>
+                <td th:text="${cafes.address}"></td>
+                <td th:text="${cafes.email}"></td>
+                <td th:text="${cafes.phone}"></td>
+                <td th:text="${cafes.open}"></td>
+                <td th:text="${cafes.close}"></td>
+                <td>
+                    <form th:action="@{/cafes/show}" th:method="GET">
+                        <div>
+                            <input type="hidden" th:value="${cafes.id}" name="id">
+                        </div>
+                        <div>
+                            <button type="submit">Menu</button>
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <form th:action="@{/cafes/edit}" th:method="GET" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <div>
+                            <input type="hidden" th:value="${cafes.id}" name="id">
+                        </div>
+                        <div>
+                            <button type="submit">Edit</button>
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <form th:action="@{/cafes/delete}" th:method="POST" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <div>
+                            <input type="hidden" th:value="${cafes.id}" name="id">
+                        </div>
+                        <div>
+                            <button type="submit">Delete</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="display: flex; margin-top: 2pt; margin-left: 20pt" sec:authorize="hasRole('ROLE_ADMIN')">
+            <td>
+                <br/>
+                <div>
+                    <!--        <div th:if="${user}">-->
+                    <form  th:action="@{/cafes/new}" th:method="GET">
+                        <button type="submit" style="padding: 5pt; font-size: 12pt;
+                     border-radius: 10pt; width: 60pt">New</button>
+                    </form>
+                </div>
+            </td>
+            <td>
+                <form th:action="@{/}" th:method="GET">
+                    <button type="submit" style="margin-left: 20pt; padding: 5pt;
+             width: 60pt; border-radius: 10pt; font-size: 12pt" >Back</button>
+                </form>
+            </td>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer-container">
+        <a href="" class="footer-logo link">Cafe<span class="footer-logo-accent">Pizza</span></a>
+    </div>
+</footer>
+</body>
+</html>

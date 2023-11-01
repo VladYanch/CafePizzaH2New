@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>List of Pizza</title>
+
+    <link rel="stylesheet" href="/style.css"/>
+<!--    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">-->
+
+</head>
+<body>
+<div class="wrapper">
+<header class="header">
+    <div class="container header-container">
+      <a href="" class="header-logo link">Cafe<span class="logo-accent">Pizza</span></a>
+      <nav class="header-nav">
+        <ul class="header-list list">
+          <li class="header-item"><a href="/" class="header-link link current">Home</a></li>
+          <li class="header-item"><a th:href="@{/cafes}" class="header-link link">Cafe</a></li>
+          <li class="header-item"><a th:href="@{/pizzas}" class="header-link link">Pizza</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="login">
+      <div class="header-item"><a th:href="@{/login}" class="login">🔑</a></div>
+    </div>
+</header>
+
+<main class="main pizzas_hero">
+    <section>
+<table>
+    <thead>
+    <tr>
+        <th>Pic</th>
+        <th>№</th>
+<!--        <th>Id</th>-->
+        <th>Name</th>
+        <th>Size</th>
+        <th>Ingredients</th>
+        <th>Price</th>
+        <th>Cafe</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pizzas, iter : ${pizzas}">
+        <td>
+            <img width="77ptx" height="77ptx" th:src="${pizzas.image}"/>
+        </td>
+        <td th:text="${iter.index}+1"></td>
+<!--        <td th:text="${pizzas.id}"></td>-->
+        <td th:text="${pizzas.name}"></td>
+        <td th:text="${pizzas.size}"></td>
+        <td th:text="${pizzas.keyIngredients}"></td>
+        <td th:text="${pizzas.price}"></td>
+        <td th:text="${pizzas.cafe.getName()}"></td>
+        <td>
+            <form th:action="@{/cafes/show}" th:method="GET">
+                <div>
+                    <input type="hidden" th:value="${pizzas.cafe.getId()}" name="id">
+                </div>
+                <div>
+                    <button type="submit">Cafe</button>
+                </div>
+            </form>
+        </td>
+        <td>
+            <form th:action="@{/pizzas/edit}" th:method="GET" sec:authorize="hasRole('ROLE_ADMIN')">
+                <div>
+                    <input type="hidden" th:value="${pizzas.id}" name="id">
+                </div>
+                <div>
+                    <button type="submit">Edit</button>
+                </div>
+            </form>
+        </td>
+        <td>
+            <form th:action="@{/pizzas/delete}" th:method="POST" sec:authorize="hasRole('ROLE_ADMIN')">
+                <div>
+                    <input type="hidden" th:value="${pizzas.id}" name="id">
+                </div>
+                <div>
+                    <button type="submit">Delete</button>
+                </div>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>
+<div class="pizza_btn_cont" sec:authorize="hasRole('ROLE_ADMIN')">
+    <td>
+        <br/>
+        <div>
+<!--        <div th:if="${user}">-->
+            <form  th:action="@{/pizzas/new}" th:method="GET">
+                <button type="submit" style="padding: 5pt; font-size: 12pt;
+                         border-radius: 10pt; width: 60pt">New</button>
+            </form>
+        </div>
+    </td>
+    <td>
+        <form th:action="@{/}" th:method="GET">
+            <button type="submit" style="margin-left: 20pt; padding: 5pt;
+                 width: 60pt; border-radius: 10pt; font-size: 12pt" >Back</button>
+        </form>
+    </td>
+</div>
+</section>
+</main>
+<footer class="footer footer_pizzas">
+    <div class="footer-container">
+        <a href="" class="footer-logo link">Cafe<span class="footer-logo-accent">Pizza</span></a>
+    </div>
+</footer>
+</div>
+</body>
+</html>

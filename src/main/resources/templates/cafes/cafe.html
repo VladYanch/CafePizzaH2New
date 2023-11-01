@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="/style.css"/>
+    <title>Cafe</title>
+</head>
+<body>
+
+
+<header class="header">
+        <div class="container header-container">
+                <a href="" class="header-logo link">Cafe<span class="logo-accent">Pizza</span></a>
+                <nav class="header-nav">
+                        <ul class="header-list list">
+                                <li class="header-item"><a href="/" class="header-link link current">Home</a></li>
+                                <li class="header-item"><a th:href="@{/cafes}" class="header-link link">Cafe</a></li>
+                                <li class="header-item"><a th:href="@{/pizzas}" class="header-link link">Pizza</a></li>
+                        </ul>
+                </nav>
+        </div>
+        🔑
+        <div class="login">
+                <div class="header-item"><a th:href="@{/login}" class="login">🔑</a></div>
+        </div>
+</header>
+
+<main>
+<section class="cafe_edit_body cafes_hero">
+<form th:method="POST" th:action="@{/cafes/create}" th:object="${cafe}" class="form">
+        <input type="hidden" th:field="*{id}" id="id"/><br/>
+        <label for="name">Name</label>
+        <input class="input_pizza" th:field="*{name}" id="name"/><br/>
+        <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+        <label for="city">City</label>
+        <input class="input_pizza" th:field="*{city}" id="city"/><br/>
+        <div class="error" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></div>
+        <label for="address">Address</label>
+        <input class="input_pizza" th:field="*{address}" id="address"/><br/>
+        <div class="error" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
+        <label for="email">E-mail</label>
+        <input class="input_pizza" th:field="*{email}" id="email"/><br/>
+        <div class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        <label for="phone">Phone</label>
+        <input class="input_pizza" th:field="*{phone}" id="phone"/><br/>
+        <div class="error" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
+        <label for="open">Open</label>
+        <input class="input_pizza" th:field="*{open}" id="open"/><br/>
+        <div class="error" th:if="${#fields.hasErrors('open')}" th:errors="*{open}"></div>
+        <label for="close">Close</label>
+        <input class="input_pizza" th:field="*{close}" id="close"/><br/>
+        <div class="error" th:if="${#fields.hasErrors('close')}" th:errors="*{close}"></div>
+
+        <div class="cafe_btn">
+                <td>
+                <br/>
+                        <div>
+                                <form  th:action="@{/cafes/new}" th:method="GET">
+                                        <button type="submit" style="padding: 5pt; font-size: 12pt;
+                                                border-radius: 10pt; width: 60pt">Submit</button>
+                                </form>
+                        </div>
+                </td>
+                <td>
+                        <form th:action="@{/cafes}" th:method="GET">
+                                <button type="submit" style="margin-left: 20pt; padding: 5pt;
+                     width: 60pt; border-radius: 10pt; font-size: 12pt" >Back</button>
+                        </form>
+                </td>
+        </div>
+</form>
+</section>
+</main>
+<footer class="footer">
+        <div class="footer-container">
+                <a href="" class="footer-logo link">Cafe<span class="footer-logo-accent">Pizza</span></a>
+        </div>
+</footer>
+</html>

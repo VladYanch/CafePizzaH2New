@@ -1,0 +1,463 @@
+:root {
+    --main-text-color: #757575;
+    --main-title-color: #212121;
+    --accent-color: #2196F3;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+ul {
+    margin: 0; padding-left: 0;
+}
+
+address {
+    font-style: normal;
+}
+
+a {
+    color: currentColor;
+}
+
+button {
+    cursor: pointer;
+}
+
+html,body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.03em;
+    margin: 0;
+    /*height: 900px;*/
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    /*display: grid;*/
+    /*grid-template-rows: auto 1fr auto;*/
+}
+
+.main {
+    flex-grow: 1;
+    /*flex: 1 0 auto;*/
+    overflow: scroll;
+}
+
+.list {
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-bottom: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.visually-hidden {
+    position: absolute;
+}
+
+h2 {
+    color: #3d9a9a;
+    text-align: center;
+    padding: 20pt;
+    background-color: lightblue;
+}
+
+/*---------------Header----------------*/
+
+.header{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ECECEC;
+    display: flex;
+    align-items: center;
+    background-color: lightgrey;
+    position: sticky;
+    top: 0;
+}
+
+.header-logo {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: var(--accent-color);
+    margin-left: 20px;
+    margin-right: 320px;
+}
+
+.logo-accent {
+    color: var(--main-title-color);
+}
+
+.header-link {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--main-title-color);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header>.container {
+    display: flex;
+    align-items: center;
+}
+
+
+.login {
+    font-weight: 700;
+    font-size: 30px; /*-20px */
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--main-title-color);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.header-list {
+    display: flex;
+    gap: 80px;
+}
+
+.header-link:hover, .header-link:focus, .login:hover, .login:focus {
+    color: var(--accent-color);
+    stroke: var(--accent-color);
+    /* fill: var(--accent-color); */
+}
+
+.pizza {
+    font-size: 24pt;
+    margin-left: 95pt;
+    padding: 20pt;
+}
+
+.error {
+    font-size: 12px;
+    color: red;
+}
+
+.input_pizza {
+    margin-top: 10pt;
+    font-size: 16pt;
+}
+
+.cafe_menu {
+    margin-bottom: 5pt;
+    /*margin-left: 200pt;*/
+    font-size: 16pt;
+    /*text-align: right;*/
+}
+
+.cafe_menu_field {
+    margin-left: 20pt;
+    /*text-align: left;*/
+}
+
+
+
+/*-----------------Hero---------------*/
+
+.hero {
+    background-color: #ffff;
+    background-image:
+            linear-gradient(
+                    rgba(47, 48, 58, 0.4),
+                    rgba(47, 48, 58, 0.4)
+            ),
+            url("/img/hero.jpg");
+     background-repeat: no-repeat;
+    background-size:cover;
+    height:490px;
+    width: auto;
+}
+
+.hero-title {
+    text-align: center;
+    margin-top: 0;
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    word-wrap: break-word;
+    font-weight: 300;
+    color: #f35f07;
+    padding-top: 100pt;
+    margin-bottom: 4rem;
+    font-size: 7rem;
+    line-height: 6rem;
+
+}
+
+.hero_buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-btn {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(30/16);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    background-color: var(--accent-color);
+    color: #FFFFFF;
+
+    padding: 10px 32px 10px 32px;
+    min-width: 200px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.hero>.container {
+    padding-top: 200px;
+    padding-bottom: 210px;
+}
+
+/*---------------Footer----------------*/
+
+.footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    line-height: calc(24/14);
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    background-color: #2F303A;
+    flex: 1 0 auto;
+}
+
+/*.footer_pizzas {*/
+/*    position: sticky;*/
+/*    bottom: 0;*/
+/*}*/
+
+.footer-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-logo {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: var(--accent-color);
+    margin-left: 20px;
+}
+
+.footer-logo-accent {
+    color: #FFFFFF;
+}
+
+.footer-link {
+    font-size: 14px;
+    line-height: calc(24/14);
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+}
+
+/*---------------Pizzas----------------*/
+
+.pizzas_hero {
+    background-color: #ffff;
+    background-image:
+            linear-gradient(
+                    rgba(47, 48, 58, 0.4),
+                    rgba(47, 48, 58, 0.4)
+            ),
+            url("/img/pizzas.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:440px;
+    width: auto;
+    padding: 30px;
+    font-size: 20px;
+    color: wheat;
+}
+
+
+/*---------------Pizza----------------*/
+
+.pizza_hero, .pizza_new_hero {
+    background-color: #ffff;
+    background-image:
+            linear-gradient(
+                    rgba(47, 48, 58, 0.4),
+                    rgba(47, 48, 58, 0.4)
+            ),
+            url("/img/pizza_oven.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:440px;
+    width: auto;
+    padding: 30px;
+    font-size: 20px;
+    color: wheat;
+}
+
+.pizza_title {
+    font-size: 30pt;
+    text-align: center;
+    margin-bottom: 20pt;
+}
+
+.pizza_edit_body {
+    margin-left: 20pt;
+    font-size: 18pt;
+    margin-bottom: 10pt;
+    text-align: right;
+}
+.pizza_new_body {
+    margin-left: 20pt;
+    font-size: 18pt;
+    margin-bottom: 10pt;
+    text-align: right;
+}
+
+.pizza_edit_hero {
+    display: flex;
+    height: 308px;
+    justify-content: center;
+}
+
+.pizza_btn {
+    display: flex;
+    margin-top: 20pt;
+    margin-left: 20pt;
+}
+
+.pizza_btn_style {
+    padding: 10pt;
+    font-size: 20pt;
+    border-radius: 10pt;
+    width: 100pt;
+}
+
+.pizza_btn_left {
+    margin-left: 20pt;
+}
+
+.pizza_btn_cont {
+    display: flex;
+    margin-top: 2pt;
+    margin-left: 20pt;
+    position: fixed;
+    bottom: 16px;
+    left: 150px;
+    z-index: 100;
+}
+
+/*---------------Cafes----------------*/
+
+.cafes_hero {
+    background-color: #ffff;
+    background-image:
+            linear-gradient(
+                    rgba(47, 48, 58, 0.4),
+                    rgba(47, 48, 58, 0.4)
+            ),
+            url("/img/cafe.jpeg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:490px;
+    width: auto;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-align: right;
+}
+
+/*.cafe_list {*/
+
+/*}*/
+/*---------------Cafe----------------*/
+.cafe_new {
+    margin-top: 10pt;
+    font-size: 16pt;
+}
+
+.cafe_edit_body {
+    display: flex;
+    justify-content: center;
+}
+
+.cafe_btn {
+    display: flex;
+    margin-top: 10pt;
+    justify-content: center;
+}
+
+.cafe_menu_left {
+    text-align: right;
+    margin-right: 5px;
+}
+.cafe_menu_right {
+    text-align: left;
+    margin-left: 5px;
+}
+/*---------------Menu----------------*/
+.cafe_requisites {
+    align-items: center;
+}
+/*---------------Login----------------*/
+.login_title {
+    color: orangered;
+    font-size: 44px;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.login_body {
+    font-size: 30px;
+    color: yellow;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.login_input {
+    width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 32px;
+}
+
+.login_btn {
+    padding: 10pt;
+    font-size: 18pt;
+    border-radius: 10pt;
+    width: 80pt;
+}
+
+.login_error {
+    margin-top: 10px;
+    font-size: 28px;
+    color: #ee1515;
+    text-align: center;
+}

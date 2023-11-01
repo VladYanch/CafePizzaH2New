@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>Cafe</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<div class="wrapper">
+<header class="header">
+    <div class="container header-container">
+        <a href="" class="header-logo link">Cafe<span class="logo-accent">Pizza</span></a>
+        <nav class="header-nav">
+            <ul class="header-list list">
+                <li class="header-item"><a href="/" class="header-link link current">Home</a></li>
+                <li class="header-item"><a th:href="@{/cafes}" class="header-link link">Cafe</a></li>
+                <li class="header-item"><a th:href="@{/pizzas}" class="header-link link">Pizza</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="login">
+        <div class="header-item"><a th:href="@{/login}" class="login">🔑</a></div>
+    </div>
+</header>
+<main class="main cafes_hero">
+<section>
+    <container>
+<form th:method="POST" th:action="@{/cafes/menu}" th:object="${cafe}" class="form">
+    <input type="hidden" th:field="*{id}" id="id"/><br/>
+     <div style="display:flex; justify-content: center; margin-bottom: 20px">
+         <div class="cafe_menu_left"  >
+            <p >Name:</p>
+            <p>City:</p>
+            <p>Address:</p>
+            <p>E-mail:</p>
+            <p>Phone:</p>
+            <p>Open:</p>
+            <p>Close:</p>
+         </div>
+         <div class="cafe_menu_right">
+            <p th:text="*{name}"></p>
+            <p th:text="*{city}"></p>
+            <p th:text="*{address}"></p>
+            <p th:text="*{email}"></p>
+            <p th:text="*{phone}"></p>
+            <p th:text="*{open}"></p>
+            <p th:text="*{close}"></p>
+         </div>
+     </div>
+</form>
+</container>
+<div style="display:flex; justify-content: center">
+<table>
+    <thead>
+    <tr style="text-align: center">
+        <th>Pic</th>
+        <th>№</th>
+<!--        <th>Id</th>-->
+        <th>Name</th>
+        <th>Size</th>
+        <th>Ingredients</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pizzas, iter : ${pizzas}">
+        <td>
+            <img width="154ptx" height="154ptx" th:src="${pizzas.image}" alt="pizza pic"/>
+        </td>
+        <td th:text="${iter.index}+1"></td>
+<!--        <td th:text="${pizzas.id}"></td>-->
+        <td th:text="${pizzas.name}" style="text-align: left"></td>
+        <td th:text="${pizzas.size}" style="text-align: center"></td>
+        <td th:text="${pizzas.keyIngredients}" style="text-align: left"></td>
+        <td th:text="${pizzas.price}" style="text-align: right"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</section>
+</main>
+    <footer class="footer footer_pizzas">
+        <div class="footer-container">
+            <a href="" class="footer-logo link">Cafe<span class="footer-logo-accent">Pizza</span></a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
