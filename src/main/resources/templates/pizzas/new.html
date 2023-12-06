@@ -8,22 +8,22 @@
 </head>
 <body>
 <div class="wrapper">
-<header class="header">
-    <div class="container header-container">
-        <a href="" class="header-logo link">Cafe<span class="logo-accent">Pizza</span></a>
-        <nav class="header-nav">
-            <ul class="header-list list">
-                <li class="header-item"><a href="/" class="header-link link current">Home</a></li>
-                <li class="header-item"><a th:href="@{/cafes}" class="header-link link">Cafe</a></li>
-                <li class="header-item"><a th:href="@{/pizzas}" class="header-link link">Pizza</a></li>
-            </ul>
-        </nav>
-    </div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="" class="header-logo link" id="logo_header_menu">Cafe<span class="logo-accent" >Pizza</span></a>
+            <nav class="header-nav">
+                <ul class="header-list list">
+                    <li class="header-item"><a href="/" class="header-link link current" id="home_header_menu">Home</a></li>
+                    <li class="header-item"><a th:href="@{/cafes}" class="header-link link" id="cafes_header_menu">Cafe</a></li>
+                    <li class="header-item"><a th:href="@{/pizzas}" class="header-link link" id="pizzas_header_menu">Pizza</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    <div class="login">
-        <div class="header-item"><a th:href="@{/login}" class="login">🔑</a></div>
-    </div>
-</header>
+        <div class="login">
+            <div class="header-item"><a th:href="@{/login}" class="login" id="auth_header_menu">🔑</a></div>
+        </div>
+    </header>
 
 <main>
 <section class="pizza_hero">
@@ -31,7 +31,7 @@
     <br/>
 <container class="pizza_edit_hero">
   <div>
-    <img width="308px" height="308px" th:src="@{/img/marherita.jpeg}"/>
+    <img width="308px" height="308px" id="pizza_image" th:src="@{/img/marherita.jpeg}"/>
   </div>
 
   <div class="pizza_edit_body">
@@ -62,12 +62,12 @@
       </div>
 
     <div class="pizza_btn">
-      <button class="pizza_btn_style pizza_btn_left">Submit</button>
+      <button class="pizza_btn_style pizza_btn_left" id="submit_button">Submit</button>
     </div>
     </form>
         <div style="margin-top: -61px">
               <form th:action="@{/pizzas}" th:method="GET">
-                <button href="/pizzas" class="pizza_btn_style">Back</button>
+                <button href="/pizzas" class="pizza_btn_style" id="back_button">Back</button>
               </form>
         </div>
   </div>
@@ -76,7 +76,7 @@
 </main>
 <footer class="footer">
     <div class="footer-container">
-        <a href="" class="footer-logo link">Cafe<span class="footer-logo-accent">Pizza</span></a>
+        <a href="" class="footer-logo link" id="logo_footer">Cafe<span class="footer-logo-accent">Pizza</span></a>
     </div>
 </footer>
 </div>

@@ -9,18 +9,18 @@
 <body>
 <header class="header">
     <div class="container header-container">
-        <a href="" class="header-logo link">Cafe<span class="logo-accent">Pizza</span></a>
+        <a href="" class="header-logo link" id="logo_header_menu">Cafe<span class="logo-accent" >Pizza</span></a>
         <nav class="header-nav">
             <ul class="header-list list">
-                <li class="header-item"><a href="/" class="header-link link current">Home</a></li>
-                <li class="header-item"><a th:href="@{/cafes}" class="header-link link">Cafe</a></li>
-                <li class="header-item"><a th:href="@{/pizzas}" class="header-link link">Pizza</a></li>
+                <li class="header-item"><a href="/" class="header-link link current" id="home_header_menu">Home</a></li>
+                <li class="header-item"><a th:href="@{/cafes}" class="header-link link" id="cafes_header_menu">Cafe</a></li>
+                <li class="header-item"><a th:href="@{/pizzas}" class="header-link link" id="pizzas_header_menu">Pizza</a></li>
             </ul>
         </nav>
     </div>
 
     <div class="login">
-        <div class="header-item"><a th:href="@{/login}" class="login">🔑</a></div>
+        <div class="header-item"><a th:href="@{/login}" class="login" id="auth_header_menu">🔑</a></div>
     </div>
 </header>
 
@@ -55,7 +55,7 @@
                             <input type="hidden" th:value="${cafes.id}" name="id">
                         </div>
                         <div>
-                            <button type="submit">Menu</button>
+                            <button type="submit" id="menu_button">Menu</button>
                         </div>
                     </form>
                 </td>
@@ -65,7 +65,7 @@
                             <input type="hidden" th:value="${cafes.id}" name="id">
                         </div>
                         <div>
-                            <button type="submit">Edit</button>
+                            <button type="submit" id="edit_button">Edit</button>
                         </div>
                     </form>
                 </td>
@@ -75,7 +75,7 @@
                             <input type="hidden" th:value="${cafes.id}" name="id">
                         </div>
                         <div>
-                            <button type="submit">Delete</button>
+                            <button type="submit" id="delete_button">Delete</button>
                         </div>
                     </form>
                 </td>
@@ -89,14 +89,14 @@
                     <!--        <div th:if="${user}">-->
                     <form  th:action="@{/cafes/new}" th:method="GET">
                         <button type="submit" style="padding: 5pt; font-size: 12pt;
-                     border-radius: 10pt; width: 60pt">New</button>
+                     border-radius: 10pt; width: 60pt" id="new_button">New</button>
                     </form>
                 </div>
             </td>
             <td>
                 <form th:action="@{/}" th:method="GET">
                     <button type="submit" style="margin-left: 20pt; padding: 5pt;
-             width: 60pt; border-radius: 10pt; font-size: 12pt" >Back</button>
+             width: 60pt; border-radius: 10pt; font-size: 12pt" id="back_button">Back</button>
                 </form>
             </td>
         </div>
@@ -104,7 +104,7 @@
 </main>
 <footer class="footer">
     <div class="footer-container">
-        <a href="" class="footer-logo link">Cafe<span class="footer-logo-accent">Pizza</span></a>
+        <a href="" class="footer-logo link" id="logo_footer">Cafe<span class="footer-logo-accent">Pizza</span></a>
     </div>
 </footer>
 </body>

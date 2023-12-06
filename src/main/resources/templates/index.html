@@ -7,34 +7,33 @@
 </head>
 <body>
 
-  <header class="header">
-    <div class="container header-container">
-      <a href="" class="header-logo link">Cafe<span class="logo-accent">Pizza</span></a>
-      <nav class="header-nav">
-        <ul class="header-list list">
-          <li class="header-item"><a href="/" class="header-link link current">Home</a></li>
-          <li class="header-item"><a th:href="@{/cafes}" class="header-link link">Cafe</a></li>
-          <li class="header-item"><a th:href="@{/pizzas}" class="header-link link">Pizza</a></li>
-        </ul>
-      </nav>
-    </div>
+<header class="header">
+  <div class="container header-container">
+    <a href="" class="header-logo link" id="logo_header_menu">Cafe<span class="logo-accent" >Pizza</span></a>
+    <nav class="header-nav">
+      <ul class="header-list list">
+        <li class="header-item"><a href="/" class="header-link link current" id="home_header_menu">Home</a></li>
+        <li class="header-item"><a th:href="@{/cafes}" class="header-link link" id="cafes_header_menu">Cafe</a></li>
+        <li class="header-item"><a th:href="@{/pizzas}" class="header-link link" id="pizzas_header_menu">Pizza</a></li>
+      </ul>
+    </nav>
+  </div>
 
-    <div class="login">
-      <div class="header-item"><a th:href="@{/login}" class="login">🔑</a></div>
-    </div>
-
-  </header>
+  <div class="login">
+    <div class="header-item"><a th:href="@{/login}" class="login" id="auth_header_menu">🔑</a></div>
+  </div>
+</header>
 
   <main>
     <section class="hero">
       <h1 class="hero-title">Cafe Pizza</h1>
       <div class="hero_buttons" style="display: flex">
         <form th:action="@{/cafes}" th:method="GET">
-          <button th:href="@{/cafes}" style="margin-left: 20pt; padding: 10pt;
+          <button th:href="@{/cafes}" id="cafes_button" style="margin-left: 20pt; padding: 10pt;
                    width: 100pt; border-radius: 10pt; font-size: 20pt" >Cafes</button>
         </form>
         <form th:action="@{/pizzas}" th:method="GET">
-          <button th:href="@{pizzas}" style="margin-left: 20pt; padding: 10pt;
+          <button th:href="@{pizzas}"  id="pizzas_button" style="margin-left: 20pt; padding: 10pt;
                    width: 100pt; border-radius: 10pt; font-size: 20pt" >Pizzas</button>
         </form>
       </div>
@@ -43,7 +42,7 @@
 
   <footer class="footer">
     <div class="footer-container">
-      <a href="" class="footer-logo link">Cafe<span class="footer-logo-accent">Pizza</span></a>
+      <a href="" class="footer-logo link" id="logo_footer">Cafe<span class="footer-logo-accent">Pizza</span></a>
     </div>
   </footer>
 

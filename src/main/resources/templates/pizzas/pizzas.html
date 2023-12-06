@@ -10,22 +10,22 @@
 </head>
 <body>
 <div class="wrapper">
-<header class="header">
-    <div class="container header-container">
-      <a href="" class="header-logo link">Cafe<span class="logo-accent">Pizza</span></a>
-      <nav class="header-nav">
-        <ul class="header-list list">
-          <li class="header-item"><a href="/" class="header-link link current">Home</a></li>
-          <li class="header-item"><a th:href="@{/cafes}" class="header-link link">Cafe</a></li>
-          <li class="header-item"><a th:href="@{/pizzas}" class="header-link link">Pizza</a></li>
-        </ul>
-      </nav>
-    </div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="" class="header-logo link" id="logo_header_menu">Cafe<span class="logo-accent" >Pizza</span></a>
+            <nav class="header-nav">
+                <ul class="header-list list">
+                    <li class="header-item"><a href="/" class="header-link link current" id="home_header_menu">Home</a></li>
+                    <li class="header-item"><a th:href="@{/cafes}" class="header-link link" id="cafes_header_menu">Cafe</a></li>
+                    <li class="header-item"><a th:href="@{/pizzas}" class="header-link link" id="pizzas_header_menu">Pizza</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    <div class="login">
-      <div class="header-item"><a th:href="@{/login}" class="login">🔑</a></div>
-    </div>
-</header>
+        <div class="login">
+            <div class="header-item"><a th:href="@{/login}" class="login" id="auth_header_menu">🔑</a></div>
+        </div>
+    </header>
 
 <main class="main pizzas_hero">
     <section>
@@ -45,22 +45,22 @@
     <tbody>
     <tr th:each="pizzas, iter : ${pizzas}">
         <td>
-            <img width="77ptx" height="77ptx" th:src="${pizzas.image}"/>
+            <img width="77ptx" height="77ptx" id="pizza_image" th:src="${pizzas.image}"/>
         </td>
-        <td th:text="${iter.index}+1"></td>
+        <td th:text="${iter.index}+1" id="pizza_num"></td>
 <!--        <td th:text="${pizzas.id}"></td>-->
-        <td th:text="${pizzas.name}"></td>
-        <td th:text="${pizzas.size}"></td>
-        <td th:text="${pizzas.keyIngredients}"></td>
-        <td th:text="${pizzas.price}"></td>
-        <td th:text="${pizzas.cafe.getName()}"></td>
+        <td th:text="${pizzas.name}" id="pizza_name"></td>
+        <td th:text="${pizzas.size}" id="pizza_size"></td>
+        <td th:text="${pizzas.keyIngredients}" id="pizza_ingredients"></td>
+        <td th:text="${pizzas.price}" id="pizza_price"></td>
+        <td th:text="${pizzas.cafe.getName()}" id="cafe_name"></td>
         <td>
             <form th:action="@{/cafes/show}" th:method="GET">
                 <div>
-                    <input type="hidden" th:value="${pizzas.cafe.getId()}" name="id">
+                    <input type="hidden"  th:value="${pizzas.cafe.getId()}" name="id">
                 </div>
                 <div>
-                    <button type="submit">Cafe</button>
+                    <button type="submit" id="cafe_button">Cafe</button>
                 </div>
             </form>
         </td>
@@ -70,7 +70,7 @@
                     <input type="hidden" th:value="${pizzas.id}" name="id">
                 </div>
                 <div>
-                    <button type="submit">Edit</button>
+                    <button type="submit" id="edit_button">Edit</button>
                 </div>
             </form>
         </td>
@@ -80,7 +80,7 @@
                     <input type="hidden" th:value="${pizzas.id}" name="id">
                 </div>
                 <div>
-                    <button type="submit">Delete</button>
+                    <button type="submit" id="delete_button">Delete</button>
                 </div>
             </form>
         </td>
@@ -111,7 +111,7 @@
 </main>
 <footer class="footer footer_pizzas">
     <div class="footer-container">
-        <a href="" class="footer-logo link">Cafe<span class="footer-logo-accent">Pizza</span></a>
+        <a href="" class="footer-logo link" id="logo_footer">Cafe<span class="footer-logo-accent">Pizza</span></a>
     </div>
 </footer>
 </div>

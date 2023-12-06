@@ -8,20 +8,19 @@
 </head>
 <body>
 <header class="header">
-
     <div class="container header-container">
-        <a href="" class="header-logo link">Cafe<span class="logo-accent">Pizza</span></a>
+        <a href="" class="header-logo link" id="logo_header_menu">Cafe<span class="logo-accent" >Pizza</span></a>
         <nav class="header-nav">
             <ul class="header-list list">
-                <li class="header-item"><a href="/" class="header-link link current">Home</a></li>
-                <li class="header-item"><a th:href="@{/cafes}" class="header-link link">Cafe</a></li>
-                <li class="header-item"><a th:href="@{/pizzas}" class="header-link link">Pizza</a></li>
+                <li class="header-item"><a href="/" class="header-link link current" id="home_header_menu">Home</a></li>
+                <li class="header-item"><a th:href="@{/cafes}" class="header-link link" id="cafes_header_menu">Cafe</a></li>
+                <li class="header-item"><a th:href="@{/pizzas}" class="header-link link" id="pizzas_header_menu">Pizza</a></li>
             </ul>
         </nav>
     </div>
 
     <div class="login">
-        <div class="header-item"><a th:href="@{/login}" class="login">🔑</a></div>
+        <div class="header-item"><a th:href="@{/login}" class="login" id="auth_header_menu">🔑</a></div>
     </div>
 </header>
 
@@ -35,17 +34,17 @@
             <h3 style="font-size: 36px; color: yellow; margin-top: 30px; margin-bottom: 15px" >Login</h3>
                 <div class="login_body">
                     <div class="login_input">
-                        <label> User Name : <input type="text" name="username" class="input_pizza"/> </label>
-                        <label> Password: <input type="password" name="password" class="input_pizza"/> </label>
+                        <label> User Name : <input type="text" name="username" id="username" class="input_pizza"/> </label>
+                        <label> Password: <input type="password" name="password" id="password" class="input_pizza"/> </label>
                     </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 40px; justify-content: center">
-                    <div><input class="login_btn" type="submit" value="Login"/></div>
+                    <div><input class="login_btn" type="submit" value="Login" id="login_button"/></div>
                     <!--<div>
                         <input formaction="Login" formmethod="post" class="login_btn" type="submit" value="Login"/>-->
                     <!--</div>-->
                     <div>
-                        <input th:formaction="@{/logout}" formmethod="post" class="login_btn" type="submit" value="Logout"/>
+                        <input th:formaction="@{/logout}" formmethod="post" class="login_btn" type="submit" value="Logout" id="logout_button"/>
 <!--                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
                     </div>
                 </div>
@@ -68,7 +67,7 @@
 
 <footer class="footer">
     <div class="footer-container">
-        <a href="" class="footer-logo link">Cafe<span class="footer-logo-accent">Pizza</span></a>
+        <a href="" class="footer-logo link" id="logo_footer">Cafe<span class="footer-logo-accent">Pizza</span></a>
     </div>
 </footer>
 </body>
