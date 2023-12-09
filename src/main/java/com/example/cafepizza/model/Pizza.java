@@ -42,7 +42,7 @@ public class Pizza {
     @Length(max = 25, message = "{validation.pizza.image.length}")
     private String image;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "cafe_id")
     private Cafe cafe;
 

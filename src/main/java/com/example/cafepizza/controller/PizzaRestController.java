@@ -7,14 +7,10 @@ import com.example.cafepizza.service.PizzaService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/pizzas/api")
+@RequestMapping("/api/pizzas")
 //@Api(description="Pizza Rest Controller")
 public class PizzaRestController {
     private final PizzaService service;
@@ -35,8 +31,14 @@ public class PizzaRestController {
 
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public Pizza findById(@RequestParam Long id) {
+    public Pizza findById(@PathVariable Long id) {
+        System.out.println(id);
         return service.findById(id).get();
     }
 
+    @DeleteMapping("/{id}")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public void deletePizza(@PathVariable Long id) {
+        service.deletePizza(id);
+    }
 }
