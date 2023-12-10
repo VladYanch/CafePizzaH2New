@@ -32,7 +32,7 @@ public class PizzaRestController {
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Pizza findById(@PathVariable Long id) {
-        System.out.println(id);
+//        System.out.println(id);
         return service.findById(id).get();
     }
 

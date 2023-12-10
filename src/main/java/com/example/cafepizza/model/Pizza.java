@@ -1,5 +1,6 @@
 package com.example.cafepizza.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -42,6 +43,7 @@ public class Pizza {
     @Length(max = 25, message = "{validation.pizza.image.length}")
     private String image;
 
+    @JsonIgnore
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "cafe_id")
     private Cafe cafe;
