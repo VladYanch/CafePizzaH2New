@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/pizzas")
-//@Api(description="Pizza Rest Controller")
 public class PizzaRestController {
     private final PizzaService service;
     private final CafeService serviceCafe;
@@ -25,13 +24,14 @@ public class PizzaRestController {
 
     @GetMapping()
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @ApiResponse(description = "find all Pizzas")
+    @ApiResponse(description = "Return list all Pizzas")
     public List<Pizza> index() {
         return service.findAll();
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @ApiResponse(description = "Return pizza by id")
     public Pizza findById(@PathVariable Long id) {
         return service.findById(id).get();
     }
