@@ -36,7 +36,6 @@ public class SecurityConfig {
         http
                 .logout((logout) -> logout.logoutUrl("/logout").permitAll()
                 .logoutSuccessUrl("/"))
-//                .antMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**")
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/",
                                 "/style.css",
