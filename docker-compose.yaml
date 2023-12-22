@@ -1,8 +1,5 @@
 services:
   web:
     ports:
-      - "2222:8080"
-#     - "8080:8080"
-    build:
-      context: ./
-#    image: cafepizzah2:latest
+      - "8080:8080"
+    image: cafepizza_h2:latest

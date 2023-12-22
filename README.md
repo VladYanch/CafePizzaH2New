@@ -15,5 +15,3 @@ Security: The application would be secured by requiring a username of "admin" to
 
 model.Cafe to model.Pizza has bidirectional @OneToMany relationship.
 This means that one cafe can have multiple pizzas, but each pizza can only belong to one cafe.
-
-Rename Master to main
