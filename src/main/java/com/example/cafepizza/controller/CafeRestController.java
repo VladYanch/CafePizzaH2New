@@ -8,7 +8,7 @@ import com.example.cafepizza.service.CafeService;
 import com.example.cafepizza.service.PizzaService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,14 +24,14 @@ public class CafeRestController {
     }
 
     @GetMapping()
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ApiResponse(description = "Return list all Cafes")
     public List<Cafe> index() {
         return serviceCafe.findAll();
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ApiResponse(description = "Return Cafe by id")
     public Cafe findById(@PathVariable Long id) {
         return serviceCafe.findById(id).get();
