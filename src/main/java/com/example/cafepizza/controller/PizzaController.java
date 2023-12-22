@@ -5,7 +5,7 @@ import com.example.cafepizza.service.CafeService;
 import com.example.cafepizza.service.PizzaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -32,14 +32,14 @@ public class PizzaController {
         return "pizzas/pizzas";
     }
     @PostMapping(value = "/delete")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deletePizza(@RequestParam Long id, RedirectAttributes attributes) {
         service.deletePizza(id);
         attributes.addFlashAttribute("deleted", id);
         return "redirect:/pizzas";
     }
     @GetMapping(value = "/new")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String addPizza(@ModelAttribute ("pizza") Pizza pizza, Model model) {
         pizza.setImage("/img/marherita.jpeg");
         pizza.setName("New Pizza");
@@ -47,7 +47,7 @@ public class PizzaController {
         return "pizzas/new";
     }
     @PostMapping("/create")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
         public String createPizza(@ModelAttribute ("pizza") @Valid Pizza pizza, BindingResult bindingResult,
                                Model model) {
         if (bindingResult.hasErrors()) {
@@ -59,7 +59,7 @@ public class PizzaController {
         return "redirect:/pizzas";
     }
     @GetMapping(value = "/edit")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String findPizza(@RequestParam ("id") Long id, Model model) {
         model.addAttribute("pizza",service.findById(id).get());
         model.addAttribute("cafes",serviceCafe.findAll());
