@@ -24781,3 +24781,77 @@ org.springframework.security.authentication.InternalAuthenticationServiceExcepti
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-10.1.16.jar:10.1.16]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-10.1.16.jar:10.1.16]
 	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+14:21:17.598 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+14:21:17.655 [main] INFO  com.example.cafepizza.CafePizzaApplication - Starting CafePizzaApplication using Java 17.0.3 with PID 77047 (/Users/admin/Documents/JAVA/CafePizzaH2New/target/classes started by admin in /Users/admin/Documents/JAVA/CafePizzaH2New)
+14:21:17.660 [main] INFO  com.example.cafepizza.CafePizzaApplication - The following 1 profile is active: "local"
+14:21:18.989 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:21:19.081 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 3 JPA repository interfaces.
+14:21:19.882 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+14:21:19.895 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:21:19.898 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:21:19.898 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+14:21:19.974 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:21:19.974 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2263 ms
+14:21:20.293 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+14:21:20.402 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+14:21:20.465 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+14:21:20.878 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+14:21:20.924 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:21:21.266 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+14:21:21.268 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:21:21.315 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+14:21:22.890 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+14:21:22.976 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:21:23.753 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:21:23.954 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+14:21:24.302 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3359217d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25ee3cd6, org.springframework.security.web.context.SecurityContextHolderFilter@31406eab, org.springframework.security.web.header.HeaderWriterFilter@2e549515, org.springframework.web.filter.CorsFilter@732ae29c, org.springframework.security.web.csrf.CsrfFilter@59eb987a, org.springframework.security.web.authentication.logout.LogoutFilter@50ac63b2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@49231d79, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31f90517, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f6f2d91, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@100d5018, org.springframework.security.web.access.ExceptionTranslationFilter@71d0ad00, org.springframework.security.web.access.intercept.AuthorizationFilter@3203ffa3]
+14:21:24.907 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:21:24.928 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+14:21:24.942 [main] INFO  com.example.cafepizza.CafePizzaApplication - Started CafePizzaApplication in 7.799 seconds (process running for 10.822)
+14:24:42.593 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:24:42.604 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:24:42.609 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:24:54.571 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+14:24:54.622 [main] INFO  com.example.cafepizza.CafePizzaApplication - Starting CafePizzaApplication using Java 17.0.3 with PID 77241 (/Users/admin/Documents/JAVA/CafePizzaH2New/target/classes started by admin in /Users/admin/Documents/JAVA/CafePizzaH2New)
+14:24:54.626 [main] INFO  com.example.cafepizza.CafePizzaApplication - The following 1 profile is active: "local"
+14:24:55.835 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:24:55.916 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 3 JPA repository interfaces.
+14:24:56.708 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+14:24:56.720 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:24:56.722 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:24:56.723 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+14:24:56.792 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:24:56.792 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2115 ms
+14:24:57.153 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+14:24:57.228 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+14:24:57.275 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+14:24:57.796 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+14:24:57.900 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:24:58.454 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+14:24:58.459 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:24:58.517 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+14:24:59.890 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+14:24:59.969 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:25:00.761 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:25:00.935 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+14:25:01.231 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4fe687b5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a02d760, org.springframework.security.web.context.SecurityContextHolderFilter@6238b10a, org.springframework.security.web.header.HeaderWriterFilter@7927209f, org.springframework.web.filter.CorsFilter@5a86112a, org.springframework.security.web.csrf.CsrfFilter@3021e31, org.springframework.security.web.authentication.logout.LogoutFilter@2a8081f5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@74b13aa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26c494d7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71d0ad00, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3203ffa3, org.springframework.security.web.access.ExceptionTranslationFilter@66075347, org.springframework.security.web.access.intercept.AuthorizationFilter@3dceec83]
+14:25:01.771 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:25:01.799 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+14:25:01.811 [main] INFO  com.example.cafepizza.CafePizzaApplication - Started CafePizzaApplication in 7.671 seconds (process running for 9.763)
+14:25:27.213 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:25:27.213 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:25:27.215 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+14:25:27.245 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.handler.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/pizzas' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+14:25:27.267 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.handler.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/pizzas' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+14:50:58.292 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:50:58.313 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:50:58.319 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:56:32.868 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+14:56:35.158 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:59:44.085 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+14:59:46.166 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:03:18.117 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.handler.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/pizzas' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+15:03:18.146 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.handler.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/pizzas' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+15:12:09.341 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:17:39.297 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.handler.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/pizzas/1' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+15:17:39.335 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.handler.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/pizzas/1' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
